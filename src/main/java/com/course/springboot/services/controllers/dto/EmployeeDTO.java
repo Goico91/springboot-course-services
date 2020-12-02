@@ -24,6 +24,18 @@ public class EmployeeDTO implements Serializable {
 
     private List<String> knowledge;
 
+    public EmployeeDTO() {
+    }
+
+    public EmployeeDTO(String name, String surname, String password, Integer age, String rol, List<String> knowledge) {
+        this.name = name;
+        this.surname = surname;
+        this.password = password;
+        this.age = age;
+        this.rol = rol;
+        this.knowledge = knowledge;
+    }
+
     public String getName() {
         return name;
     }

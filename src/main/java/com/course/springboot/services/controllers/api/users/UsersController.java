@@ -1,4 +1,4 @@
-package com.course.springboot.services.controllers;
+package com.course.springboot.services.controllers.api.users;
 
 import com.course.springboot.services.vo.User;
 import org.springframework.web.bind.annotation.RestController;

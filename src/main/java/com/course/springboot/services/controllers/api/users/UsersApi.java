@@ -1,5 +1,6 @@
-package com.course.springboot.services.controllers;
+package com.course.springboot.services.controllers.api.users;
 
+import com.course.springboot.services.commons.ConstantsUrl;
 import com.course.springboot.services.vo.User;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,7 @@ import java.util.List;
 /**
  * API for Users Services
  */
-@RequestMapping(value = "/users")
+@RequestMapping(value = ConstantsUrl.API_USERS)
 public interface UsersApi {
 
     /**
@@ -26,7 +27,7 @@ public interface UsersApi {
      * @param id to filter
      * @return User with that id
      */
-    @GetMapping("/{id}")
+    @GetMapping(ConstantsUrl.ID)
     User getUser(@PathVariable int id);
 
     /**
@@ -47,6 +48,6 @@ public interface UsersApi {
      * Delete User
      * @param id from the user to delete
      */
-    @DeleteMapping("/{id}")
+    @DeleteMapping(ConstantsUrl.ID)
     void deleteUser(@PathVariable int id);
 }
