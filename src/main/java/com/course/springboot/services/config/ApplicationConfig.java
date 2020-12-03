@@ -31,7 +31,6 @@ public class ApplicationConfig {
     public MessageSource messageSource() {
         LOG.info("Set Locale to: " + locale);
         Locale.setDefault(new Locale(locale));
-
         ResourceBundleMessageSource source = new ResourceBundleMessageSource();
         source.setBasename(basename);
         source.setUseCodeAsDefaultMessage(true);

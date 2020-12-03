@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 @Service
 public class EmployeesServiceImpl implements EmployeesService{
 
-    private static final Logger LOG = LoggerFactory.getLogger(EmployeesServiceImpl.class);
     private final List<Employee> employees = new ArrayList<>();
 
     public EmployeesServiceImpl() {

@@ -20,7 +20,7 @@ import java.util.Locale;
 
 @ControllerAdvice
 public class RestErrorHandler {
-    private static final Logger LOGGER = LoggerFactory.getLogger(RestErrorHandler.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(RestErrorHandler.class.getName());
     private final MessageSource messageSource;
 
     @Autowired
@@ -73,7 +73,7 @@ public class RestErrorHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ValidationErrorDTO processValidationError(MethodArgumentNotValidException ex) {
-        LOGGER.error(ex.getMessage());
+        LOG.error(ex.getMessage());
         BindingResult result = ex.getBindingResult();
         List<FieldError> fieldErrors = result.getFieldErrors();
 
@@ -90,7 +90,7 @@ public class RestErrorHandler {
     @ExceptionHandler(RestException.class)
     @ResponseBody
     public RestExceptionInfo exceptionHandler(HttpServletResponse response, RestException ex) {
-        LOGGER.error(ex.getInfo().name() + ": " + ex.getInfo().getMessage());
+        LOG.error(ex.getInfo().name() + ": " + ex.getInfo().getMessage());
         response.setStatus(ex.getInfo().getHttpStatus().value());
         return new RestExceptionInfo(ex.getInfo().getHttpStatus(), ex.getInfo().getId(), ex.getInfo().getMessage());
     }
