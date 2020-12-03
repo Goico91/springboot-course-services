@@ -55,7 +55,8 @@ public class EmployeesServiceImpl implements EmployeesService{
         }
 
         int id = 0;
-        Optional<Employee> lastEmployee = employees.stream().skip(employees.size()-1L).findFirst();
+        long skip = employees.isEmpty() ? 0 : employees.size()-1L;
+        Optional<Employee> lastEmployee = employees.stream().skip(skip).findFirst();
         if(lastEmployee.isPresent()) {
             id = lastEmployee.get().getId() + 1;
         }

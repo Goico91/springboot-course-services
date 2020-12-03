@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
  */
 public enum RestExceptionE {
 
-    ERROR_EMPLOYEE_NOT_FOUND(1000, HttpStatus.BAD_REQUEST, "employee.not.exists"),
+    ERROR_EMPLOYEE_NOT_FOUND(1000, HttpStatus.NOT_FOUND, "employee.not.exists"),
     ERROR_EMPLOYEE_ALREADY_EXISTS(1001, HttpStatus.BAD_REQUEST, "employee.already.exists"),
     UNAUTHORIZED(1002, HttpStatus.UNAUTHORIZED, "user.unauthorized"),
     ;
