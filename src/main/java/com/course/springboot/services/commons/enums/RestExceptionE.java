@@ -4,8 +4,6 @@ import org.springframework.http.HttpStatus;
 
 /**
  * Numerators for all Rest Exceptions that we are going to send
- *
- * @author com.babel
  */
 public enum RestExceptionE {
 
